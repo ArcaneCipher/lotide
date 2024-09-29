@@ -34,3 +34,6 @@ console.log("Test Case ");
 result = tail(["Hello"]);
 assertEqual(result.length, 0); // ensure we get back 0-length array
 assertEqual(result[0], undefined); // ensure first element is undefined as an empty array is undefined
+result = tail([]);
+assertEqual(result.length, 0); // ensure we get back 0-length array
+assertEqual(result[0], undefined); // ensure first element is undefined as an empty array is undefined
