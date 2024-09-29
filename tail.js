@@ -32,5 +32,5 @@ assertEqual(result[1], "Labs"); // ensure second element is "Labs"
 // An empty array should yield an empty array for its tail
 console.log("Test Case ");
 result = tail(["Hello"]);
-assertEqual(result.length, 0); // ensure we get back two elements
-assertEqual(result[0], undefined); // ensure first element is "Lighthouse"
+assertEqual(result.length, 0); // ensure we get back 0-length array
+assertEqual(result[0], undefined); // ensure first element is undefined as an empty array is undefined
