@@ -22,15 +22,15 @@ function assertArraysEqual(arr1, arr2) {
 
 function middle(arr) {
   let result = [];
-  let middle = Math.floor((arr.length - 1) / 2);
+  let middle = Math.floor(arr.length / 2);
 
   if (arr.length <= 2) {
     return result;
   }
 
   if (arr.length % 2 === 0) {
+    result.push(arr[middle - 1]);
     result.push(arr[middle]);
-    result.push(arr[middle + 1]);
   } else {
     result.push(arr[middle]);
   }
