@@ -26,8 +26,8 @@ function flatten(complexArray) {
 
   for (let i = 0; i < complexArray.length; i++) {
     if (Array.isArray(complexArray[i])) {
-      // If the element is an array, concatenate its elements to the result
-      flatArray = flatArray.concat(complexArray[i]);
+      // If the element is an array, push its elements to result using apply()
+      Array.prototype.push.apply(flatArray, complexArray[i]);
     } else {
       // If the element is not an array, push it directly to the result
       flatArray.push(complexArray[i]);
