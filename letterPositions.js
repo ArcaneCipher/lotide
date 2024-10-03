@@ -56,5 +56,8 @@ What would the resulting object look like with the same example string that we u
 
 // Test case: 
 console.log(letterPositions("hello"));
-assertArraysEqual(letterPositions("hello"), {h: [0], e: [1], l: [2, 3], o: [4]}); // Should pass
-
+const result = letterPositions("hello");
+assertArraysEqual(result['h'], [0]);
+assertArraysEqual(result['e'], [1]);
+assertArraysEqual(result['l'], [2, 3]);
+assertArraysEqual(result['o'], [4]);
