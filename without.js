@@ -1,5 +1,5 @@
 // eqArrays function for comparing arrays
-function eqArrays(arr1, arr2) {
+const eqArrays = function (arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false; // Arrays are not the same length, so they can't be equal
   }
@@ -12,7 +12,7 @@ function eqArrays(arr1, arr2) {
 }
 
 // assertArraysEqual function
-function assertArraysEqual (arr1, arr2) {
+const assertArraysEqual = function (arr1, arr2) {
   if (eqArrays(arr1, arr2)) {
     console.log(`✅✅✅ Assertion Passed: ${arr1} === ${arr2}`);
   } else {
@@ -21,7 +21,7 @@ function assertArraysEqual (arr1, arr2) {
 }
 
 // without function to remove unwanted elements from source array
-function without(source, itemsToRemove) {
+const without = function (source, itemsToRemove) {
   let result = [];
   for (let i = 0; i < source.length; i++) {
     // Check if the current element is NOT in the itemsToRemove array using includes() method

@@ -1,5 +1,5 @@
 // eqArrays function for comparing arrays
-function eqArrays(arr1, arr2) {
+const eqArrays = function (arr1, arr2) {
   if (arr1.length !== arr2.length) {
     return false; // Arrays are not the same length, so they can't be equal
   }
@@ -12,7 +12,7 @@ function eqArrays(arr1, arr2) {
 }
 
 // assertArraysEqual function
-function assertArraysEqual(arr1, arr2) {
+const assertArraysEqual = function (arr1, arr2) {
   if (eqArrays(arr1, arr2)) {
     console.log(`✅✅✅ Assertion Passed: ${arr1} === ${arr2}`);
   } else {
@@ -20,7 +20,7 @@ function assertArraysEqual(arr1, arr2) {
   }
 }
 
-function middle(arr) {
+const middle = function (arr) {
   let result = [];
   let middle = Math.floor(arr.length / 2);
 

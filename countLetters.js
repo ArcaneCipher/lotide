@@ -1,4 +1,4 @@
-function assertEqual(actual, expected) {
+const assertEqual = function (actual, expected) {
   if (actual === expected) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
   } else {
@@ -6,7 +6,7 @@ function assertEqual(actual, expected) {
   }
 };
 
-function countLetters(string) {
+const countLetters = function (string) {
   const results = {}; // Initialize results object
   const cleanString = string.replace(/[^a-zA-Z]/g, '') // Clean string by removing any character that aren't a-z and A-Z
   const lowerCase = cleanString.toLowerCase() // Optional: to make string case-insensitive
