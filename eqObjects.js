@@ -33,7 +33,6 @@ const eqObjects = function (object1, object2) {
     const value2 = object2[key];
 
     if (Array.isArray(value1) && Array.isArray(value2)) {
-    } else if (obj2Keys.includes(key) === true) {
       if (!eqArrays(value1, value2)) {
         return false;
       }
