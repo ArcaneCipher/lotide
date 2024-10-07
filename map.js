@@ -28,9 +28,6 @@ const map = function (array, callback) {
   return results;
 }
 
-const results1 = map(words, (word) => word[0]);
-console.log(results1);
-
 // Test Case 1: Extracting the first letter of each word
 const test1 = map(words, (word) => word[0]);
 assertArraysEqual(test1, ["g", "c", "t", "m", "t"]); // Expected output: ✅✅✅ Assertion Passed
