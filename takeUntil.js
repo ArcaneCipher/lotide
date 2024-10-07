@@ -20,7 +20,7 @@ const assertArraysEqual = function (arr1, arr2) {
 
 const takeUntil = function (array, callback) {
   // Loop through and push array elements until element value from callback function is truthy.
-  result = [];
+  let result = [];
 
   for (let item of array) {
     // If the callback returns true, stop and return the result
