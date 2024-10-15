@@ -20,7 +20,7 @@ assertEqual(result[1], "Labs"); // ensure second element is "Labs"
 // Test Case 3: Single or empty element array
 // An array with only one element should yield an empty array for its tail
 // An empty array should yield an empty array for its tail
-console.log("Test Case ");
+console.log("Test Case 3");
 result = tail(["Hello"]);
 assertEqual(result.length, 0); // ensure we get back 0-length array
 assertEqual(result[0], undefined); // ensure first element is undefined as an empty array is undefined
