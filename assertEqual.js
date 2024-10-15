@@ -1,3 +1,5 @@
+// FUNCTION IMPLEMENTATION
+
 /**
  * Compares two values and prints a message indicating if they are strictly equal.
  * @param {*} actual - The actual value to compare.
@@ -14,4 +16,6 @@ const assertEqual = function (actual, expected) {
   }
 };
 
+// EXPORT MODULE
+// This allows assertEqual to be imported and used in other files
 module.exports = assertEqual;
