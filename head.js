@@ -1,6 +1,3 @@
-// IMPORT ASSERT EQUAL FUNCTION
-const assertEqual = require("./assertEqual"); // Importing assertEqual from the assertEqual module
-
 // HEAD FUNCTION IMPLEMENTATION
 
 /**
