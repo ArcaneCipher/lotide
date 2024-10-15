@@ -1,14 +1,17 @@
-// FUNCTION IMPLEMENTATION
+/**
+ * Compares two values and prints a message indicating if they are strictly equal.
+ * @param {*} actual - The actual value to compare.
+ * @param {*} expected - The expected value to compare against.
+ */
 const assertEqual = function (actual, expected) {
+  // Check if both values are strictly equal (===)
   if (actual === expected) {
+    // Log a success message if they are equal
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
   } else {
+    // Log a failure message if they are not equal
     console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
 };
 
-// TEST CODE
-assertEqual("string", "string");
-assertEqual("Lighthouse Labs", "Bootcamp");
-assertEqual(1, 1);
-assertEqual(1, 3);
+module.exports = assertEqual;
