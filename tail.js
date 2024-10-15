@@ -1,39 +1,14 @@
-// FUNCTION IMPLEMENTATION
-const assertEqual = function (actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-}
-
 // TAIL FUNCTION IMPLEMENTATION
+
+/**
+ * Returns the last element of an array.
+ * @param {Array} array - The array from which to retrieve all but the first element.
+ * @returns {*} The last element(s) of the array, or undefined if the array is empty.
+ */
 const tail = function (array) {
-  return array.slice(1);
+  return array.slice(1); // Return all but the first element of the array
 }
 
-// TEST CODE
-// Test case 1: Ensure original array is not modified
-console.log("Test Case 1");
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words); // no need to capture the return value since we are not checking it
-assertEqual(words.length, 3); // original array should still have 3 elements!
-
-
-// Test Case 2: Check the returned array elements
-console.log("Test Case 2");
-let result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result.length, 2); // ensure we get back two elements
-assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
-assertEqual(result[1], "Labs"); // ensure second element is "Labs"
-
-// Test Case 3: Single or empty element array
-// An array with only one element should yield an empty array for its tail
-// An empty array should yield an empty array for its tail
-console.log("Test Case ");
-result = tail(["Hello"]);
-assertEqual(result.length, 0); // ensure we get back 0-length array
-assertEqual(result[0], undefined); // ensure first element is undefined as an empty array is undefined
-result = tail([]);
-assertEqual(result.length, 0); // ensure we get back 0-length array
-assertEqual(result[0], undefined); // ensure first element is undefined as an empty array is undefined
+// EXPORT MODULE
+// Exporting the tal function for use in other files
+module.exports = tail;
