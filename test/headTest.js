@@ -1,14 +1,30 @@
 // IMPORT FUNCTIONS
-const head = require('../head'); // Import the head function from the head.js module
-const assertEqual = require('../assertEqual'); // Import the assertEqual function for testing
+const assert = require("chai").assert;
+const head = require("../head");
 
-// TEST CODE
+describe("#head", () => {
+  // Test 1: Check if the first element of [1, 2, 3] is 1
+  it("returns 1 for [1, 2, 3]", () => {
+    assert.strictEqual(head([1, 2, 3]), 1);
+  });
 
-// Test 1: Check if the first element of [5, 6, 7] is 5
-assertEqual(head([5, 6, 7]), 5); // Expected output: Assertion Passed
+  // Test 2: Check if the first element of ["5"] is "5"
+  it("returns '5' for ['5']", () => {
+    assert.strictEqual(head(["5"]), "5");
+  });
 
-// Test 2: Check if the first element of ["Hello", "Lighthouse", "Labs"] is "Hello"
-assertEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello"); // Expected output: Assertion Passed
+  // Test 3: Check if the first element of [5, 6, 7] is 5
+  it("returns 5 for [5, 6, 7]", () => {
+    assert.strictEqual(head([5, 6, 7]), 5);
+  });
 
-// Test 3: Check for edge case: empty array returns undefined
-assertEqual(head([]), undefined); // Expected output: Assertion Passed (undefined is expected)
+  // Test 4: Check if the first element of ["Hello", "Lighthouse", "Labs"] is "Hello"
+  it("returns 'Hello' for ['Hello', 'Lighthouse', 'Labs']", () => {
+    assert.strictEqual(head(["Hello", "Lighthouse", "Labs"]), "Hello");
+  });
+
+  // Test 5: Check for edge case: empty array returns undefined
+  it("returns undefined for []", () => {
+    assert.strictEqual(head([]), undefined);
+  });
+});
