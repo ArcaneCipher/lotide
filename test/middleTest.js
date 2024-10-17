@@ -1,20 +1,30 @@
 // IMPORT FUNCTIONS
-const assertArraysEqual = require("../assertArraysEqual"); // Import the assertArraysEqual function for testing arrays
-const middle = require("../middle"); // Import the middle function to test
+const assert = require("chai").assert;
+const middle = require("../middle");
 
-// TEST CASES
+describe("#middle", () => {
+  // Test 1: Edge case - array with 2 elements should return an empty array
+  it("returns [] for [1, 2]", () => {
+    assert.deepEqual(middle([1, 2]), []);
+  });
 
-// Test 1: Edge case - array with 2 elements should return an empty array
-assertArraysEqual(middle([1, 2]), []); // Expected output: Assertion Passed
+  // Test 2: Edge case - array with 1 element should return an empty array
+  it("returns [] for [1]", () => {
+    assert.deepEqual(middle([1]), []);
+  });
 
-// Test 2: Edge case - array with 1 element should return an empty array
-assertArraysEqual(middle([1]), []); // Expected output: Assertion Passed
+  // Test 3: Array with even number of elements (6 elements) should return the middle two elements
+  it("returns [3, 4] for [1, 2, 3, 4, 5, 6]", () => {
+    assert.deepEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
+  });
 
-// Test 3: Array with even number of elements (6 elements) should return the middle two elements
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]); // Expected output: Assertion Passed
+  // Test 4: Array with odd number of elements (5 elements) should return the single middle element
+  it("returns [3] for [1, 2, 3, 4, 5]", () => {
+    assert.deepEqual(middle([1, 2, 3, 4, 5]), [3]);
+  });
 
-// Test 4: Array with odd number of elements (5 elements) should return the single middle element
-assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]); // Expected output: Assertion Passed
-
-// Test 5: Edge case - empty array should return an empty array
-assertArraysEqual(middle([]), []); // Expected output: Assertion Passed
+  // Test 5: Edge case - empty array should return an empty array
+  it("returns [] for []", () => {
+    assert.deepEqual(middle([]), []);
+  });
+});
