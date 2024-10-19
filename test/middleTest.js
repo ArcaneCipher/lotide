@@ -2,6 +2,7 @@
 const assert = require("chai").assert;
 const middle = require("../middle");
 
+// TEST CASES
 describe("#middle", () => {
   // Test 1: Edge case - array with 2 elements should return an empty array
   it("returns [] for [1, 2]", () => {

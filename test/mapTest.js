@@ -2,7 +2,7 @@
 const { assert } = require("chai");
 const map = require("../map");
 
-// TEST CASES FOR map FUNCTION
+// TEST CASES
 describe("#map", () => {
   
   // Test Case 1: Extracting the first letter of each word

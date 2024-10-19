@@ -1,8 +1,8 @@
 // IMPORT FUNCTIONS
-const assert = require("chai").assert; // Import Chai's assert function for testing
-const without = require("../without"); // Import the without function for testing
+const assert = require("chai").assert;
+const without = require("../without");
 
-// TEST CASES FOR without FUNCTION
+// TEST CASES
 describe("#without", () => {
 
   // Test Case 1: Removing one number from an array of numbers

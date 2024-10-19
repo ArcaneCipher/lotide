@@ -2,6 +2,7 @@
 const assert = require("chai").assert;
 const tail = require("../tail");
 
+// TEST CASES
 describe("#tail", () => {
   // Test case 1: Ensure we return length 2 for an array with three elements
   it("returns length 2 for 3 element array", () => {

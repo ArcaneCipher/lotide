@@ -2,16 +2,16 @@
 const assert = require("chai").assert; 
 const letterPositions = require("../letterPositions"); 
 
-// TEST CASES FOR letterPositions FUNCTION
+// TEST CASES
 describe("#letterPositions", () => {
   
   // Test 1: Basic test with the word "hello"
   it("returns correct positions for the word 'hello'", () => {
     const result = letterPositions("hello");
-    assert.deepEqual(result['h'], [0]); // 'h' is at index 0
-    assert.deepEqual(result['e'], [1]); // 'e' is at index 1
-    assert.deepEqual(result['l'], [2, 3]); // 'l' appears at indices 2 and 3
-    assert.deepEqual(result['o'], [4]); // 'o' is at index 4
+    assert.deepEqual(result['h'], [0]);
+    assert.deepEqual(result['e'], [1]);
+    assert.deepEqual(result['l'], [2, 3]);
+    assert.deepEqual(result['o'], [4]);
   });
 
   // Test 2: Complex test with "lighthouse in the house"
@@ -32,13 +32,13 @@ describe("#letterPositions", () => {
   // Test 3: Edge case - string with repeated characters "aaa"
   it("returns correct positions for the string 'aaa'", () => {
     const result = letterPositions("aaa");
-    assert.deepEqual(result['a'], [0, 1, 2]); // 'a' appears at indices 0, 1, and 2
+    assert.deepEqual(result['a'], [0, 1, 2]);
   });
 
   // Test 4: Edge case - empty string
   it("returns an empty object for an empty string", () => {
     const result = letterPositions("");
-    assert.deepEqual(result, {}); // No letters in an empty string, expect empty object
+    assert.deepEqual(result, {});
   });
 
 });

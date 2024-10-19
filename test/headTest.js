@@ -2,6 +2,7 @@
 const assert = require("chai").assert;
 const head = require("../head");
 
+// TEST CASES
 describe("#head", () => {
   // Test 1: Check if the first element of [1, 2, 3] is 1
   it("returns 1 for [1, 2, 3]", () => {

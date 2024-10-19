@@ -1,16 +1,28 @@
 // IMPORT FUNCTIONS
-const assertArraysEqual = require("../assertArraysEqual"); // Import the assertArraysEqual function for testing
+const assert = require("chai").assert;
+const assertArraysEqual = require("../assertArraysEqual");
 
-// TEST CASES
+// TEST CASES FOR assertArraysEqual FUNCTION
+describe("#assertArraysEqual", () => {
 
-// Test 1: Check if [1, 2, 3] is equal to [1, 2, 3] (should pass)
-assertArraysEqual([1, 2, 3], [1, 2, 3]); // Expected output: Assertion Passed
+  // Test Case 1: Arrays with matching elements (numbers)
+  it("should return true for [1, 2, 3] and [1, 2, 3]", () => {
+    assert.isTrue(assertArraysEqual([1, 2, 3], [1, 2, 3]));
+  });
 
-// Test 2: Check if [1, 2, 3] is equal to [3, 2, 1] (should fail)
-assertArraysEqual([1, 2, 3], [3, 2, 1]); // Expected output: Assertion Failed
+  // Test Case 2: Arrays with different order of elements
+  it("should return false for [1, 2, 3] and [3, 2, 1]", () => {
+    assert.isFalse(assertArraysEqual([1, 2, 3], [3, 2, 1]));
+  });
 
-// Test 3: Check if ["1", "2", "3"] is equal to ["1", "2", "3"] (should pass)
-assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]); // Expected output: Assertion Passed
+  // Test Case 3: Arrays with matching elements (strings)
+  it("should return true for ['1', '2', '3'] and ['1', '2', '3']", () => {
+    assert.isTrue(assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]));
+  });
 
-// Test 4: Check if ["1", "2", "3"] is equal to [1, 2, 3] (should fail due to string vs number comparison)
-assertArraysEqual(["1", "2", "3"], [1, 2, 3]); // Expected output: Assertion Failed
+  // Test Case 4: Arrays with mixed types (strings vs numbers)
+  it("should return false for ['1', '2', '3'] and [1, 2, 3]", () => {
+    assert.isFalse(assertArraysEqual(["1", "2", "3"], [1, 2, 3]));
+  });
+
+});
