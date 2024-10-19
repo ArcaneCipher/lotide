@@ -4,7 +4,6 @@ const eqObjects = require("../eqObjects");
 
 // TEST CASES
 describe("#eqObjects", () => {
-
   // Test Case 1: Objects with same key-value pairs in different orders
   it("returns true for { color: 'red', size: 'medium' } and { size: 'medium', color: 'red' }", () => {
     const obj1 = { color: "red", size: "medium" };
@@ -33,4 +32,24 @@ describe("#eqObjects", () => {
     assert.isFalse(eqObjects(obj1, obj2));
   });
 
+  // Test Case 5: Objects with objects as values but matching content (should return true)
+  it("returns true for { a: { z: 1 }, b: 2 } and { a: { z: 1 }, b: 2 }", () => {
+    const obj1 = { a: { z: 1 }, b: 2 };
+    const obj2 = { a: { z: 1 }, b: 2 };
+    assert.isTrue(eqObjects(obj1, obj2));
+  });
+
+  // Test Case 6: Objects with objects as values but different content (should return false)
+  it("returns false for { a: { y: 0, z: 1 }, b: 2 } and { a: 1, b: 2 }", () => {
+    const obj1 = { a: { y: 0, z: 1 }, b: 2 };
+    const obj2 = { a: 1, b: 2 };
+    assert.isFalse(eqObjects(obj1, obj2));
+  });
+
+  // Test Case 7: Objects with objects as values but different content (should return false)
+  it("returns false for { a: { y: 0, z: 1 }, b: 2 } and { a: { z: 1 }, b: 2 }", () => {
+    const obj1 = { a: { y: 0, z: 1 }, b: 2 };
+    const obj2 = { a: { z: 1 }, b: 2 };
+    assert.isFalse(eqObjects(obj1, obj2));
+  });
 });

@@ -1,5 +1,6 @@
 // IMPORT DEPENDENCIES
 const eqArrays = require("./eqArrays"); // Assuming eqArrays is already modularized
+const isObject = require("./isObject"); // Assuming isObject is already modularized
 
 /**
  * Compares two objects to check if they are equal.
@@ -8,16 +9,13 @@ const eqArrays = require("./eqArrays"); // Assuming eqArrays is already modulari
  * @returns {boolean} - Returns true if the objects are equal, false otherwise.
  */
 const eqObjects = function (object1, object2) {
-  const obj1Keys = Object.keys(object1);
-  const obj2Keys = Object.keys(object2);
-
   // Check if both objects have the same number of keys
-  if (obj1Keys.length !== obj2Keys.length) {
+  if (Object.keys(object1).length !== Object.keys(object2).length) {
     return false;
   }
 
   // Iterate over each key in the first object
-  for (const key of obj1Keys) {
+  for (const key of Object.keys(object1)) {
     const value1 = object1[key];
     const value2 = object2[key];
 
@@ -26,11 +24,16 @@ const eqObjects = function (object1, object2) {
       if (!eqArrays(value1, value2)) {
         return false; // Arrays are not equal
       }
-    } else {
-      // For non-array values, compare with strict equality
-      if (value1 !== value2) {
-        return false; // Values do not match
+    }
+    // Check if both values are objects (but not arrays)
+    else if (isObject(value1) && isObject(value2)) {
+      if (!eqObjects(value1, value2)) {
+        return false; // Objects are not equal
       }
+    }
+    // For non-array values, non-object values, compare with strict equality
+    else if (value1 !== value2) {
+      return false; // Primitive values do not match
     }
   }
 
