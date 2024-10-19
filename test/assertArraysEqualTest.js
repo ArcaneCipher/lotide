@@ -2,7 +2,7 @@
 const assert = require("chai").assert;
 const assertArraysEqual = require("../assertArraysEqual");
 
-// TEST CASES FOR assertArraysEqual FUNCTION
+// TEST CASES
 describe("#assertArraysEqual", () => {
 
   // Test Case 1: Arrays with matching elements (numbers)

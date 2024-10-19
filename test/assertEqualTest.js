@@ -2,7 +2,7 @@
 const assert = require("chai").assert;
 const assertEqual = require("../assertEqual");
 
-// TEST CASES FOR assertEqual FUNCTION
+// TEST CASES
 describe("#assertEqual", () => {
 
   // Test Case 1: Identical strings should return true
