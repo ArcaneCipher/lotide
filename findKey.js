@@ -18,6 +18,10 @@ const findKey = function (object, valueToFind) {
   return undefined;
 }
 
+// EXPORT MODULE
+// Exporting the findKey function for use in other files
+module.exports = findKey;
+
 // Test cases
 const restaurants = {
   "Blue Hill": { stars: 1 },

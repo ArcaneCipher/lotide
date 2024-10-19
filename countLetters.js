@@ -23,6 +23,10 @@ const countLetters = function (string) {
   return results;
 }
 
+// EXPORT MODULE
+// Exporting the countLetters function for use in other files
+module.exports = countLetters;
+
 // Test case
 const test1 = countLetters("LHL");
 const test2 = countLetters("lighthouse in the house");

@@ -16,6 +16,11 @@ const findKeyByValue = function (object, valueToFind) {
   return undefined;
 };
 
+
+// EXPORT MODULE
+// Exporting the findKeyByValue function for use in other files
+module.exports = findKeyByValue;
+
 const bestTVShowsByGenre = {
   sci_fi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",

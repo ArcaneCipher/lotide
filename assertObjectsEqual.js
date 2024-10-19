@@ -33,6 +33,10 @@ const assertObjectsEqual = function (actual, expected) {
   }
 };
 
+// EXPORT MODULE
+// Exporting the assertObjectsEqual function for use in other files
+module.exports = assertObjectsEqual;
+
 // Test cases
 const obj1 = { a: "1", b: 2 };
 const obj2 = { b: 2, a: "1" };

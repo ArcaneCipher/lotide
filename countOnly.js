@@ -28,6 +28,10 @@ const countOnly = function (allItems, itemsToCount) {
   return results;
 };
 
+// EXPORT MODULE
+// Exporting the countOnly function for use in other files
+module.exports = countOnly;
+
 
 const firstNames = [
   "Karl",

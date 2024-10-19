@@ -1,41 +1,26 @@
-const eqArrays = function (arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
+// TAKEUNTIL FUNCTION IMPLEMENTATION
 
-const assertArraysEqual = function (arr1, arr2) {
-  if (eqArrays(arr1, arr2)) {
-    console.log(`✅✅✅ Assertion Passed: ${arr1} === ${arr2}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${arr1} !== ${arr2}`);
-  }
-};
-
+/**
+ * Returns a slice of the array with elements taken from the beginning 
+ * until the callback function returns a truthy value.
+ * @param {Array} array - The array to process.
+ * @param {function} callback - The function that determines when to stop taking elements.
+ * @returns {Array} - A new array with the elements up to the point where the callback returns true.
+ */
 const takeUntil = function (array, callback) {
-  // Loop through and push array elements until element value from callback function is truthy.
-  let result = [];
+  const result = []; // Initialize an empty array to hold the results
 
+  // Loop through the array until the callback returns true
   for (let item of array) {
-    // If the callback returns true, stop and return the result
     if (callback(item)) {
-      break;
+      break; // Stop processing if the callback condition is met
     }
-    // Otherwise, push the item to the result array
-    result.push(item);
+    result.push(item); // Add the item to the result if callback condition is not met
   }
-  return result; // Return the collected results
+  
+  return result; // Return the final array
 };
 
-// Test cases
-const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
-assertArraysEqual(takeUntil(data1, x => x < 0), [1, 2, 5, 7, 2]); // Should pass
-
-const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
-assertArraysEqual(takeUntil(data2, x => x === ','), ["I've", "been", "to", "Hollywood"]); // Should pass
+// EXPORT MODULE
+// Exporting the takeUntil function for use in other files
+module.exports = takeUntil;

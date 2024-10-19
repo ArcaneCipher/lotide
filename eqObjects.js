@@ -45,6 +45,10 @@ const eqObjects = function (object1, object2) {
   return true;
 };
 
+// EXPORT MODULE
+// Exporting the eqObjects function for use in other files
+module.exports = eqObjects;
+
 // Test cases
 // Test 1
 console.log("Test 1:");

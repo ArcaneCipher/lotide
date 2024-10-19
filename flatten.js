@@ -37,6 +37,10 @@ const flatten = function (complexArray) {
   return flatArray; // Return the flattened array
 }
 
+// EXPORT MODULE
+// Exporting the flatten function for use in other files
+module.exports = flatten;
+
 // Test case for flatten
 console.log(flatten([1, 2, [3, 4], 5, [6]])); // Expected output: [1, 2, 3, 4, 5, 6]
 console.log(flatten([1, [2, 3], 4]));         // Expected output: [1, 2, 3, 4]

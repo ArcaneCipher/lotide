@@ -1,29 +1,19 @@
-const eqArrays = function (arr1, arr2) {
-  if (arr1.length !== arr2.length) {
-    return false;
-  }
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
-      return false;
-    }
-  }
-  return true;
-}
+// LETTER POSITIONS FUNCTION IMPLEMENTATION
 
-const assertArraysEqual = function (arr1, arr2) {
-  if (eqArrays(arr1, arr2)) {
-    console.log(`✅✅✅ Assertion Passed: ${arr1} === ${arr2}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${arr1} !== ${arr2}`);
-  }
-}
-
+/**
+ * Returns an object where each key is a character from the input sentence,
+ * and the value is an array containing all the positions (indices) where that character appears.
+ * @param {string} sentence - The sentence to analyze.
+ * @returns {Object} - An object with characters as keys and arrays of indices as values.
+ */
 const letterPositions = function (sentence) {
-  const results = {};
-  
+  const results = {}; // Object to store character positions
+
+  // Loop through each character in the sentence
   for (let i = 0; i < sentence.length; i++) {
     const char = sentence[i];
 
+    // Ignore spaces
     if (char !== ' ') {
       // If the character is already in results, push the index to its array
       if (results[char]) {
@@ -38,26 +28,6 @@ const letterPositions = function (sentence) {
   return results;
 };
 
-/* 
-What would the resulting object look like with the same example string that we used before ("lighthouse in the house")?
-  {
-    l: [0], 
-    i: [1, 11], 
-    g: [2], 
-    h: [3, 5, 15, 18], 
-    t: [4, 14], 
-    o: [6, 19], 
-    u: [7, 20], 
-    s: [8, 21], 
-    e: [9, 16, 22], 
-    n: [12] 
-  }
-*/
-
-// Test case: 
-console.log(letterPositions("hello"));
-const result = letterPositions("hello");
-assertArraysEqual(result['h'], [0]);
-assertArraysEqual(result['e'], [1]);
-assertArraysEqual(result['l'], [2, 3]);
-assertArraysEqual(result['o'], [4]);
+// EXPORT MODULE
+// Exporting the letterPositions function for use in other files
+module.exports = letterPositions;
