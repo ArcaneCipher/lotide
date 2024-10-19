@@ -25,4 +25,19 @@ describe("#eqArrays", () => {
     assert.isFalse(eqArrays(["1", "2", "3"], ["1", "2", 3]));
   });
 
+  // Test Case 5: Matching nested arrays (deep arrays)
+  it("should return true for [[2, 3], [4]], [[2, 3], [4]] and [[2, 3], [4]], [[2, 3], [4]]", () => {
+    assert.isTrue(eqArrays([[2, 3], [4]], [[2, 3], [4]]));
+  });
+
+   // Test Case 5: Non-matching nested arrays (deep arrays)
+   it("should return false for [[2, 3], [4]] and [[2, 3], [4, 5]]", () => {
+    assert.isFalse(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]));
+  });
+
+    // Test Case 5: Non-matching nested arrays (deep arrays)
+    it("should return false for [[2, 3], [4]] and [[2, 3], 4]", () => {
+      assert.isFalse(eqArrays([[2, 3], [4]], [[2, 3], 4]));
+    });
+
 });
