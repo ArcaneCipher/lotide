@@ -1,17 +1,28 @@
-// IMPORT FUNCTION
-// Import the assertEqual function from the assertEqual.js module
-const assertEqual = require('../assertEqual');
+// IMPORT FUNCTIONS
+const assert = require("chai").assert;
+const assertEqual = require("../assertEqual");
 
-// TEST CODE
+// TEST CASES FOR assertEqual FUNCTION
+describe("#assertEqual", () => {
 
-// Test 1: Check if two identical strings are considered equal
-assertEqual("string", "string"); // Expected output: Assertion Passed
+  // Test Case 1: Identical strings should return true
+  it("should return true when comparing 'string' and 'string'", () => {
+    assert.isTrue(assertEqual("string", "string"));
+  });
 
-// Test 2: Check if two different strings are considered unequal
-assertEqual("Lighthouse Labs", "Bootcamp"); // Expected output: Assertion Failed
+  // Test Case 2: Different strings should return false
+  it("should return false when comparing 'Lighthouse Labs' and 'Bootcamp'", () => {
+    assert.isFalse(assertEqual("Lighthouse Labs", "Bootcamp"));
+  });
 
-// Test 3: Check if two identical numbers are considered equal
-assertEqual(1, 1); // Expected output: Assertion Passed
+  // Test Case 3: Identical numbers should return true
+  it("should return true when comparing 1 and 1", () => {
+    assert.isTrue(assertEqual(1, 1));
+  });
 
-// Test 4: Check if two different numbers are considered unequal
-assertEqual(1, 3); // Expected output: Assertion Failed
+  // Test Case 4: Different numbers should return false
+  it("should return false when comparing 1 and 3", () => {
+    assert.isFalse(assertEqual(1, 3));
+  });
+
+});
