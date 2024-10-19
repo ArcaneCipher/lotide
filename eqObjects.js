@@ -9,13 +9,16 @@ const isObject = require("./isObject"); // Assuming isObject is already modulari
  * @returns {boolean} - Returns true if the objects are equal, false otherwise.
  */
 const eqObjects = function (object1, object2) {
+  const obj1Keys = Object.keys(object1);
+  const obj2Keys = Object.keys(object2);
+
   // Check if both objects have the same number of keys
-  if (Object.keys(object1).length !== Object.keys(object2).length) {
+  if (obj1Keys.length !== obj2Keys.length) {
     return false;
   }
 
   // Iterate over each key in the first object
-  for (const key of Object.keys(object1)) {
+  for (const key of obj1Keys) {
     const value1 = object1[key];
     const value2 = object2[key];
 
